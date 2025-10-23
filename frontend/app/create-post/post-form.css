@@ -1,0 +1,71 @@
+/* Page container */
+.post-page {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0f2f5;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Card container */
+.post-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Heading */
+.post-card h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Form inputs */
+.post-card input,
+.post-card textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+.post-card input:focus,
+.post-card textarea:focus {
+  outline: none;
+  border-color: #1877f2;
+  box-shadow: 0 0 5px rgba(24, 119, 242, 0.5);
+}
+
+/* Submit button */
+.post-card button {
+  width: 100%;
+  background: #1877f2;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.post-card button:hover {
+  background: #155ab6;
+}
+
+.post-card button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
