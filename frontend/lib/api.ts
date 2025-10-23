@@ -3,21 +3,19 @@ const API =
 
 
 async function request(path: string, opts: any = {}) {
-  const res = await fetch(API + path, opts);
+  // Remove trailing slash from base URL
+  const base = API.replace(/\/+$/, '');
+  // Remove leading slash from path
+  const cleanPath = path.replace(/^\/+/, '');
+  const res = await fetch(`${base}/${cleanPath}`, opts);
 
-  // Throw if HTTP error
   if (!res.ok) {
     const errText = await res.text();
     throw new Error(errText || 'API Error');
   }
 
-  // Parse JSON if content-type includes json
   const contentType = res.headers.get('content-type') || '';
-  if (contentType.includes('application/json')) {
-    return res.json();
-  }
-
-  // Otherwise return text
+  if (contentType.includes('application/json')) return res.json();
   return res.text();
 }
 
