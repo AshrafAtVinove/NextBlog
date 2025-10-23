@@ -10,7 +10,6 @@ export default function Home() {
   const { loggedIn } = useAuth(); 
   useEffect(() => {
     const token = localStorage.getItem('token');
-
     if (token) {
       fetchPosts();
     }
