@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import api from '../lib/api';
 import Link from 'next/link';
 import { useAuth } from './context/AuthContext';
+import LoginPage from './login/page';
 
 export default function Home() {
   const [posts, setPosts] = useState<any[]>([]);
@@ -28,10 +29,7 @@ export default function Home() {
 
   if (!loggedIn) {
     return (
-      <div className="welcome-container">
-        <h1>Welcome to My Blog App</h1>
-        <p>Please <Link href="/login">login</Link> or <Link href="/register">register</Link> to see the blog posts.</p>
-      </div>
+     <LoginPage/>
     );
   }
 
