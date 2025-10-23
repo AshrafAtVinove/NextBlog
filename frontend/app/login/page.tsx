@@ -54,7 +54,6 @@ export default function LoginPage() {
             onChange={(e) => setForm({ ...form, password: e.target.value })}
             required
           />
-          
           <button type="submit" disabled={loading}>
             {loading ? 'Logging in...' : 'Login'}
           </button>
