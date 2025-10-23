@@ -15,7 +15,7 @@ export default function Header() {
 
   return (
     <header>
-      <h1>My Blog App</h1>
+      <h1>Blog Application</h1>
       <nav>
         <Link href="/">Home</Link>
         {loggedIn ? (
@@ -24,8 +24,7 @@ export default function Header() {
           </>
         ) : (
           <>
-            <Link href="/register">Register</Link>
-            <Link href="/login">Login</Link>
+           
           </>
         )}
       </nav>
