@@ -17,7 +17,6 @@ export default function Header() {
     <header>
       <h1>Blog Application</h1>
       <nav>
-        <Link href="/">Home</Link>
         {loggedIn ? (
           <>
             <button onClick={handleLogout}>Logout</button>
