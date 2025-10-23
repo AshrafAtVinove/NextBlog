@@ -10,11 +10,12 @@ import { Post } from './posts/post.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.DATABASE_HOST || 'localhost',
-      port: +(process.env.DATABASE_PORT || 5432),
-      username: process.env.DATABASE_USER || 'postgres',
-      password: process.env.DATABASE_PASSWORD || 'postgres',
-      database: process.env.DATABASE_NAME || 'blog_db',
+      url: process.env.DATABASE_URL,
+      // host: process.env.DATABASE_HOST || 'localhost',
+      // port: +(process.env.DATABASE_PORT || 5432),
+      // username: process.env.DATABASE_USER || 'postgres',
+      // password: process.env.DATABASE_PASSWORD || 'postgres',
+      // database: process.env.DATABASE_NAME || 'blog_db',
       entities: [User, Post],
       synchronize: true,
     }),
