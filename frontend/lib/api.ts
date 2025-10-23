@@ -23,20 +23,20 @@ async function request(path: string, opts: any = {}) {
 
 export default {
   register: (data: any) =>
-    request('auth/register', {
+    request('/auth/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     }),
   login: (data: any) =>
-    request('auth/login', {
+    request('/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     }),
   getPosts: () => request('/posts'),
   createPost: (data: any, token?: string) =>
-    request('posts', {
+    request('/posts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -45,11 +45,11 @@ export default {
       body: JSON.stringify(data),
     }),
   updatePost: (id: number, data: any) =>
-    request(`posts/${id}`, {
+    request(`/posts/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     }),
   deletePost: (id: number) =>
-    request(`posts/${id}`, { method: 'DELETE' }),
+    request(`/posts/${id}`, { method: 'DELETE' }),
 };
